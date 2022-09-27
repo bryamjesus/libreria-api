@@ -9,9 +9,6 @@ mongoose.connect('mongodb://127.0.0.1/libros')
     console.log('Error al conectar a la base de datos: ', err);
   });
 
-
-
-
 const app = express()
 const PORT = 3000
 
