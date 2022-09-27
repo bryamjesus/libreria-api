@@ -49,6 +49,26 @@ const controlador = {
     //   }
     // })
   },
+  async editar(req, res) {
+    try {
+      const { id } = req.params
+      const { nombre, estado } = req.body
+      const result = await generoModel.findByIdAndUpdate(id, { nombre, estado }, { new: true })
+      res.json(result);
+    } catch (e) {
+      console.log(e)
+      res.sendStatus(500)
+    }
+  },
+  async eliminar(req, res) {
+    try {
+      await generoModel.findByIdAndDelete(req.params.id)
+      res.sendStatus(200)
+    } catch (e) {
+      console.log(e)
+      res.sendStatus(500)
+    }
+  }
 
 }
 
