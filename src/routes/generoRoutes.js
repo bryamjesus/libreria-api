@@ -7,6 +7,11 @@ router.get('/', (req, res) => {
   controlador.listar(req, res)
 })
 
+router.get('/:id', (req, res) => {
+  controlador.listarId(req, res)
+})
+
+
 router.post('/',(req, res) => {
   controlador.guardar(req, res)
 })
