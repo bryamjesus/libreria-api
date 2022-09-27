@@ -1,6 +1,6 @@
 const express = require('express');
 const generoRoutes = require('./routes/generoRoutes')
-const mongoose = require('mongoose');´
+const mongoose = require('mongoose');
 
 const app = express()
 const PORT = 3000
