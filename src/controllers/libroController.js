@@ -12,7 +12,8 @@ const controlador = {
   },
   async getOneBook(req, res) {
     try {
-      const result = await libroModel.findById(req.params.id);
+      const result = await libroModel.findById(req.params.id)
+        .populate('genero_id', 'nombre -_id') // { path: "genero_id", select: 'nombre' }
       res.json(result)
     } catch (e) {
       console.error(e)
@@ -51,7 +52,6 @@ const controlador = {
       res.sendStatus(500)
     }
   }
-
 }
 
 module.exports = controlador
