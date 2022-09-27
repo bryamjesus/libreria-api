@@ -19,6 +19,8 @@ router.put('/:id', (req, res) => {
   bookController.editBook(req, res)
 })
 
-
+router.delete('/:id', (req, res) => {
+  bookController.deleteBook(req, res)
+})
 
 module.exports = router;
