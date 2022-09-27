@@ -6,6 +6,8 @@ const collectionSchema = new Schema({
   titulo: { type: String, require: true },
   fecha_creacion: { type: Date, default: Date.now() },
   estado: { type: String, default: 'A' } // A: activo | I: inactivo
+}, {
+  versionKey: false
 })
 
 module.exports = mongoose.model('libro', collectionSchema)
