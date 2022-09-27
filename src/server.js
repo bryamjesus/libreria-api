@@ -1,5 +1,6 @@
 const express = require('express');
 const generoRoutes = require('./routes/generoRoutes')
+const bookRoutes = require('./routes/libroRoutes')
 const mongoose = require('mongoose');
 
 const app = express()
@@ -15,5 +16,6 @@ mongoose.connect('mongodb://127.0.0.1/libros')
 app.use(express.json())
 
 app.use('/genero', generoRoutes)
+app.use('/libros', bookRoutes)
 
 app.listen(PORT, () => console.log(`🚀 Servidor iniciado en el puerto ${PORT}`))
